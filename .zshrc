@@ -54,7 +54,11 @@ plugins=(git sublime)
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH=$PATH:$HOME/bin
 # export MANPATH="/usr/local/man:$MANPATH"
+
+HISTSIZE=10000
+SAVEHIST=10000
 
 source $ZSH/oh-my-zsh.sh
 
@@ -82,3 +86,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+setopt inc_append_history share_history
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
