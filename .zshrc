@@ -51,12 +51,17 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(autojump git sublime chucknorris brew tmux tmuxinator pyenvi osx)
 
+# User configuration
+
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH=$PATH:$HOME/bin:/usr/local/sbin:$HOME/netbeans/bin
+# export MANPATH="/usr/local/man:$MANPATH"
 #ZSH_TMUX_ITERM2=true
 #ZSH_TMUX_AUTOSTART=true
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 . $HOME/.zshrc.d/*
 
@@ -65,7 +70,7 @@ source $ZSH/oh-my-zsh.sh
 HISTSIZE=100000
 SAVEHIST=100000
 setopt beep extendedglob
-#setopt inc_append_history share_history
+setopt inc_append_history share_history
 unsetopt autocd
 bindkey -e
 
@@ -74,12 +79,10 @@ zstyle :compinstall filename '/home/leonidp/.zshrc'
 autoload -Uz compinit
 compinit
 
-EDITOR="/usr/bin/vim -f"
+export EDITOR="/usr/bin/vim -f"
 
-PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin:$HOME/netbeans/bin:$HOME/bin
 
 fpath=($HOME/zsh-functions/ $fpath[@])
-export EDITOR
 
 VLESS=$(find /usr/share/vim -name less.sh)
 
@@ -87,7 +90,7 @@ VLESS=$(find /usr/share/vim -name less.sh)
 #  alias less=$VLESS
 #fi
 
-if [[ $HOST != *leonid* && $HOST != vd-leonidp* && $HOST != *podoll* && $HOST != US* ]]; then
+if [[ $HOST != *MacBook* && $HOST != *leonid* && $HOST != vd-leonidp* && $HOST != *podoll* && $HOST != US* ]]; then
         source ~/git-even-faster.plugin.zsh
 fi
 
