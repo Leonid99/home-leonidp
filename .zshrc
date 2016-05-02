@@ -76,7 +76,7 @@ compinit
 
 EDITOR="/usr/bin/vim -f"
 
-PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin:$HOME/netbeans/bin:$HOME/bin:$HOME/xscripts
+PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin:$HOME/netbeans/bin:$HOME/bin
 
 fpath=($HOME/zsh-functions/ $fpath[@])
 export EDITOR
