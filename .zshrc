@@ -1,11 +1,11 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/leonidpodolny/.oh-my-zsh
+export ZSH=$HOME/oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="kphoen"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -35,7 +35,7 @@ COMPLETION_WAITING_DOTS="true"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -49,36 +49,55 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sublime)
+plugins=(autojump git sublime chucknorris brew tmux tmuxinator pyenvi osx)
 
-# User configuration
-
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export MANPATH="/usr/local/man:$MANPATH"
+#ZSH_TMUX_ITERM2=true
+#ZSH_TMUX_AUTOSTART=true
 
 source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+# Customize to your needs...
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+. $HOME/.zshrc.d/*
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+#HISTFILE=~/.histfile.$HOST
+#HISTFILE=~/.histfile
+HISTSIZE=100000
+SAVEHIST=100000
+setopt beep extendedglob
+#setopt inc_append_history share_history
+unsetopt autocd
+bindkey -e
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+zstyle :compinstall filename '/home/leonidp/.zshrc'
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+autoload -Uz compinit
+compinit
+
+EDITOR="/usr/bin/vim -f"
+
+PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin:$HOME/netbeans/bin:$HOME/bin:$HOME/xscripts
+
+fpath=($HOME/zsh-functions/ $fpath[@])
+export EDITOR
+
+VLESS=$(find /usr/share/vim -name less.sh)
+
+#if [ x"$VLESS" != x"" -a ! -z $VLESS ]; then
+#  alias less=$VLESS
+#fi
+
+if [[ $HOST != *leonid* && $HOST != vd-leonidp* && $HOST != *podoll* && $HOST != US* ]]; then
+        source ~/git-even-faster.plugin.zsh
+fi
+
+#[[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
+
+
+if which pyenv > /dev/null; then
+        eval "$(pyenv init -)"
+fi
+export PYENV_ROOT=/usr/local/var/pyenv 
+
+export JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
+/usr/local/bin/archey -c
