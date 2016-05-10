@@ -3,84 +3,78 @@
 	email = leonid@digitalocean.com
 
 [status]
-        showUntrackedFiles = no
+    showUntrackedFiles = no
 
 [color]
 	branch = auto
 	diff = auto
 	grep = auto
 	status = auto
-        interactive = auto
+    interactive = auto
 
 [core]
-        excludesfile = ~/gitignore
-        fsyncobjectfiles = true
+    excludesfile = ~/gitignore
+    fsyncobjectfiles = true
 [clean]
-        requireForce = false
+    requireForce = false
 
 [diff]
-        #tool = gvimdiff
-        #tool = sublimerge
-        #tool = p4diff
-        #tool = bc3
+    #tool = gvimdiff
+    #tool = sublimerge
+    #tool = p4diff
+    #tool = bc3
 	tool = mvimdiff
 
 [pager]
-        diff = false
-        grep = false
+    diff = false
+    grep = false
 [difftool]
-        prompt = false
+    prompt = false
 [difftool "bc3"]
-        prompt = no
-        trustExitCode = true
+    prompt = no
+    trustExitCode = true
 
 [merge]
-        #tool = gvimdiff3
-        tool = sublimerge
-        #tool = bc3
+    #tool = gvimdiff3
+    tool = sublimerge
+    #tool = bc3
 
 [mergetool "gvimdiff3"]
 	cmd = gvim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 [mergetool "vimdiff3"]
 	cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 [mergetool "p4merge"]
-        cmd = /opt/p4v/bin/p4merge \"$BASE\" \"$REMOTE\" \"$LOCAL\" \"$MERGED\"
-        keepTemporaries = false
-        keepBackup = false
+    cmd = /opt/p4v/bin/p4merge \"$BASE\" \"$REMOTE\" \"$LOCAL\" \"$MERGED\"
+    keepTemporaries = false
+    keepBackup = false
 
 [mergetool "diffmerge"]
 	cmd = /usr/bin/diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 
 [mergetool "bc3"]
-        trustExitCode = true
+    trustExitCode = true
 
-[giggle]
-	main-window-maximized = true
-	main-window-geometry = 0x0+0+0
-	main-window-view = HistoryView
-	history-view-vpane-position = 716
-	file-view-vpane-position = 502
 [alias]
-        graph = "log --pretty=format:'%h: %s' --topo-order --graph"
+    graph = "log --pretty=format:'%h: %s' --topo-order --graph"
 
 [grep]
-        lineNumber = true
-        extendedRegexp = true
+    lineNumber = true
+    extendedRegexp = true
 [push]
 	default = current
 [difftool "diffmerge"]
 	cmd = /usr/bin/diffmerge \"$LOCAL\" \"$REMOTE\"
 [difftool "p4diff"]
-        cmd = /opt/p4v/bin/p4merge \"$LOCAL\" \"$REMOTE\"
-        keepTemporaries = false
-        keepBackup = false
+    cmd = /opt/p4v/bin/p4merge \"$LOCAL\" \"$REMOTE\"
+    keepTemporaries = false
+    keepBackup = false
 
 [mergetool "sublimerge"]
-        cmd = /home/leonidp/bin/sublime_text3 -n --wait \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\" --command \"sublimerge_diff_views\"
-        trustExitCode = false
+    cmd = /home/leonidp/bin/sublime_text3 -n --wait \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\" --command \"sublimerge_diff_views\"
+    trustExitCode = false
 
 [difftool "sublimerge"]
-        cmd = /home/leonidp/bin/sublime_text3 -n --wait \"$LOCAL\" \"$REMOTE\" --command \"sublimerge_diff_views {\\\"left_read_only\\\": true, \\\"right_read_only\\\": true}\"
+    cmd = /home/leonidp/bin/sublime_text3 -n --wait \"$LOCAL\" \"$REMOTE\" --command \"sublimerge_diff_views {\\\"left_read_only\\\": true, \\\"right_read_only\\\": true}\"
 
 [difftool "mvimdiff"]
     cmd = mvim -f -d \"$LOCAL\" \"$REMOTE\"
