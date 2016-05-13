@@ -81,6 +81,14 @@ compinit
 
 export EDITOR="/usr/bin/vim -f"
 
+export CHEF_USER_NAME=lpodolny
+export CHEF_CLIENT_KEY="$(cat $HOME/.chef/leonidpodolny.pem)"
+export DROPLET_SSH_KEY="$(cat $HOME/.ssh/id_testing)"
+export DIGITALOCEAN_SSH_KEY_IDS=aa:85:1f:ef:95:02:a2:70:11:2d:59:bf:3d:b6:c1:d2
+export DIGITALOCEAN_ACCESS_TOKEN=0a1d6ff24304e0417c505d356a4825420fa489ddba3c3ab049d74276912db3ef
+export KITCHEN_LOCAL_YAML="$HOME/.kitchen/config.yml"
+eval "$(chef shell-init $(basename $SHELL))"
+
 PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin:$HOME/netbeans/bin:$HOME/bin
 
 fpath=($HOME/zsh-functions/ $fpath[@])
