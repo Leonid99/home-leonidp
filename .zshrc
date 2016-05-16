@@ -54,10 +54,11 @@ plugins=(autojump git sublime chucknorris brew tmux tmuxinator pyenvi osx docker
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin:$HOME/netbeans/bin:$HOME/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 #ZSH_TMUX_ITERM2=true
 #ZSH_TMUX_AUTOSTART=true
+export GOPATH=$HOME/go
 
 source $ZSH/oh-my-zsh.sh
 
@@ -89,7 +90,6 @@ export DIGITALOCEAN_ACCESS_TOKEN=0a1d6ff24304e0417c505d356a4825420fa489ddba3c3ab
 export KITCHEN_LOCAL_YAML="$HOME/.kitchen/config.yml"
 eval "$(chef shell-init $(basename $SHELL))"
 
-PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin:$HOME/netbeans/bin:$HOME/bin
 
 fpath=($HOME/zsh-functions/ $fpath[@])
 
