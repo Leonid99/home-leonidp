@@ -81,6 +81,7 @@ compinit
 
 export EDITOR="/usr/bin/vim -f"
 
+export GOPATH=$HOME/go
 
 fpath=($HOME/zsh-functions/ $fpath[@])
 
