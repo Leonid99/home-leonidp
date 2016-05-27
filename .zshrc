@@ -87,6 +87,8 @@ export CHEF_CLIENT_KEY="$(cat $HOME/.chef/leonidpodolny.pem)"
 export DROPLET_SSH_KEY="$(cat $HOME/.ssh/id_testing)"
 export DIGITALOCEAN_SSH_KEY_IDS=aa:85:1f:ef:95:02:a2:70:11:2d:59:bf:3d:b6:c1:d2
 export DIGITALOCEAN_ACCESS_TOKEN=0a1d6ff24304e0417c505d356a4825420fa489ddba3c3ab049d74276912db3ef
+export DIGITALOCEAN_ACCESS_TOKEN1=f49923587be3d543c110b2826ba315690d14265d42eb3940f76dd8aa80e276e8
+export DIGITALOCEAN_ACCESS_TOKEN2=0e1c8146dba3a0daa590dbae7a619cbf026b0b17468b5401cd82996de03c471e
 export KITCHEN_LOCAL_YAML="$HOME/.kitchen/config.yml"
 eval "$(chef shell-init $(basename $SHELL))"
 
