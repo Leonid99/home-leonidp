@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # This shell script passes all its arguments to the binary inside the
-# MacVim.app application bundle.  If you make links to this script as view,
+# Vim.app application bundle.  If you make links to this script as view,
 # gvim, etc., then it will peek at the name used to call it and set options
 # appropriately.
 #
@@ -18,7 +18,7 @@ then
 	myDir="`dirname "$0"`"
 	myAppDir="$myDir/../Applications"
 	for i in ~/Applications ~/Applications/vim $myDir $myDir/vim $myAppDir $myAppDir/vim /Applications /Applications/vim /Applications/Utilities /Applications/Utilities/vim; do
-		if [ -x "$i/MacVim.app" ]; then
+		if [ -x "$i/Vim.app" ]; then
 			VIM_APP_DIR="$i"
 			break
 		fi
@@ -26,10 +26,10 @@ then
 fi
 if [ -z "$VIM_APP_DIR" ]
 then
-	echo "Sorry, cannot find MacVim.app.  Try setting the VIM_APP_DIR environment variable to the directory containing MacVim.app."
+	echo "Sorry, cannot find Vim.app.  Try setting the VIM_APP_DIR environment variable to the directory containing Vim.app."
 	exit 1
 fi
-binary="$VIM_APP_DIR/MacVim.app/Contents/MacOS/Vim"
+binary="$VIM_APP_DIR/Vim.app/Contents/MacOS/Vim"
 
 # Next, peek at the name used to invoke this script, and set options
 # accordingly.
