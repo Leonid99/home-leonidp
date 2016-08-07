@@ -104,4 +104,3 @@ fi
 export PYENV_ROOT=/usr/local/var/pyenv 
 
 export JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
-/usr/local/bin/archey -c
