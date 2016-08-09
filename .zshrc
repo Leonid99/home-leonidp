@@ -49,7 +49,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(autojump git sublime chucknorris brew tmux tmuxinator pyenvi osx docker)
+plugins=(autojump git sublime chucknorris brew tmux tmuxinator python pyenvi osx docker)
 
 # User configuration
 
@@ -104,3 +104,5 @@ fi
 export PYENV_ROOT=/usr/local/var/pyenv 
 
 export JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
