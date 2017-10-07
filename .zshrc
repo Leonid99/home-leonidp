@@ -53,8 +53,12 @@ plugins=(autojump git sublime chucknorris brew tmux tmuxinator python pyenvi osx
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH=$PATH:$HOME/bin:/usr/local/sbin:$HOME/netbeans/bin
+PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+PATH=$PATH:$HOME/bin:/usr/local/sbin
+PATH="$HOME/.cargo/bin:$PATH"
+PATH="$PATH:$HOME/.rvm/bin"
+export PATH
+
 # export MANPATH="/usr/local/man:$MANPATH"
 #ZSH_TMUX_ITERM2=true
 #ZSH_TMUX_AUTOSTART=true
@@ -95,14 +99,6 @@ if [[ $HOST != *MacBook* && $HOST != *leonid* && $HOST != vd-leonidp* && $HOST !
         source ~/git-even-faster.plugin.zsh
 fi
 
-#[[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
+eval "$(direnv hook zsh)"
 
 
-if which pyenv > /dev/null; then
-        eval "$(pyenv init -)"
-fi
-export PYENV_ROOT=/usr/local/var/pyenv 
-
-export JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

@@ -24,7 +24,7 @@
     #tool = p4diff
     #tool = bc3
 	#tool = mvimdiff
-        tool = nvimdiff
+     tool = nvimdiff
 
 [pager]
     diff = false
@@ -79,7 +79,16 @@
 
 [difftool "mvimdiff"]
     cmd = mvim -f -d \"$LOCAL\" \"$REMOTE\"
-
 [difftool "nvimdiff"]
-    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
-    
+    cmd = nvim -f -d \"$LOCAL\" \"$REMOTE\"
+[difftool "ndavimdiff"]
+        cmd = open -n -a Neovim -W -n --args --cwd /Users/leonidpodolny -d \"$LOCAL\" \"$REMOTE\"
+
+[sendemail]
+        from = Leonid Podolny <leonid@podolny.net>
+        smtpserver = smtp.gmail.com
+        smtpuser = leonid@podolny.net
+        smtpencryption = tls
+        smtppass = vgqcxwvmniczejsk
+        chainreplyto = false
+        smtpserverport = 587
