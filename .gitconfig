@@ -6,10 +6,10 @@
     showUntrackedFiles = no
 
 [color]
-	branch = auto
-	diff = auto
-	grep = auto
-	status = auto
+    branch = auto
+    diff = auto
+    grep = auto
+    status = auto
     interactive = auto
 
 [core]
@@ -23,8 +23,8 @@
     #tool = sublimerge
     #tool = p4diff
     #tool = bc3
-	#tool = mvimdiff
-     tool = nvimdiff
+        #tool = mvimdiff
+    tool = nvimdiff
 
 [pager]
     diff = false
@@ -41,16 +41,16 @@
     #tool = bc3
 
 [mergetool "gvimdiff3"]
-	cmd = gvim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+    cmd = gvim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 [mergetool "vimdiff3"]
-	cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+    cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 [mergetool "p4merge"]
     cmd = /opt/p4v/bin/p4merge \"$BASE\" \"$REMOTE\" \"$LOCAL\" \"$MERGED\"
     keepTemporaries = false
     keepBackup = false
 
 [mergetool "diffmerge"]
-	cmd = /usr/bin/diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+    cmd = /usr/bin/diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 
 [mergetool "bc3"]
     trustExitCode = true
@@ -62,9 +62,9 @@
     lineNumber = true
     extendedRegexp = true
 [push]
-	default = current
+    default = current
 [difftool "diffmerge"]
-	cmd = /usr/bin/diffmerge \"$LOCAL\" \"$REMOTE\"
+    cmd = /usr/bin/diffmerge \"$LOCAL\" \"$REMOTE\"
 [difftool "p4diff"]
     cmd = /opt/p4v/bin/p4merge \"$LOCAL\" \"$REMOTE\"
     keepTemporaries = false
@@ -82,13 +82,13 @@
 [difftool "nvimdiff"]
     cmd = nvim -f -d \"$LOCAL\" \"$REMOTE\"
 [difftool "ndavimdiff"]
-        cmd = open -n -a Neovim -W -n --args --cwd /Users/leonidpodolny -d \"$LOCAL\" \"$REMOTE\"
+    cmd = open -n -a Neovim -W -n --args --cwd /Users/leonidpodolny -d \"$LOCAL\" \"$REMOTE\"
 
 [sendemail]
-        from = Leonid Podolny <leonid@podolny.net>
-        smtpserver = smtp.gmail.com
-        smtpuser = leonid@podolny.net
-        smtpencryption = tls
-        smtppass = vgqcxwvmniczejsk
-        chainreplyto = false
-        smtpserverport = 587
+    from = Leonid Podolny <leonid@podolny.net>
+    smtpserver = smtp.gmail.com
+    smtpuser = leonid@podolny.net
+    smtpencryption = tls
+    smtppass = vgqcxwvmniczejsk
+    chainreplyto = false
+    smtpserverport = 587
