@@ -1,6 +1,6 @@
 [user]
-        name = Leonid Podolny
-        email = leonid@podolny.net
+    name = Leonid Podolny
+    email = leonid@podolny.net
 
 [status]
     showUntrackedFiles = no
@@ -23,7 +23,8 @@
     #tool = sublimerge
     #tool = p4diff
     #tool = bc3
-	tool = mvimdiff
+	#tool = mvimdiff
+        tool = nvimdiff
 
 [pager]
     diff = false
@@ -36,7 +37,7 @@
 
 [merge]
     #tool = gvimdiff3
-    tool = sublimerge
+    #tool = sublimerge
     #tool = bc3
 
 [mergetool "gvimdiff3"]
@@ -78,3 +79,7 @@
 
 [difftool "mvimdiff"]
     cmd = mvim -f -d \"$LOCAL\" \"$REMOTE\"
+
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+    
