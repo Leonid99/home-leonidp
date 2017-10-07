@@ -56,7 +56,6 @@ plugins=(autojump git sublime chucknorris brew tmux tmuxinator python pyenvi osx
 PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 PATH=$PATH:$HOME/bin:/usr/local/sbin
 PATH="$HOME/.cargo/bin:$PATH"
-PATH="$PATH:$HOME/.rvm/bin"
 export PATH
 
 # export MANPATH="/usr/local/man:$MANPATH"
